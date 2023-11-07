@@ -11,5 +11,6 @@ Set your .env `OPENAI_API_KEY`
 Run:
 
 ```
+pip install -r requirements.txt
 python main.py
 ```
