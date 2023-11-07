@@ -13,7 +13,7 @@ FIELDS_TO_EXTRACT = ["address", "description", "date_received", "ref", "decision
 def build_prompt_messages(html):
     list_of_fields = ",".join(FIELDS_TO_EXTRACT)
     base_message = f"I'm going to provide you an html file. Extract me this set of fields {list_of_fields} in a dictionary format. Your answer should only be the dictionary."
-    extra_request = "Also, based on the description, could you tell me if it's commercial or residential? Add that to the dictionary as well. Remember to only print the dictionary and nothing else."
+    extra_request = "Also, based on the description, could you tell me if it's commercial or residential? Add that to the dictionary as well on the key 'classification'. Remember to only print the dictionary and nothing else."
     return [
         {"role": "user", "content": base_message},
         {"role": "user", "content": html},
