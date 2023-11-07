@@ -21,16 +21,6 @@ def build_prompt_messages(html):
     ]
 
 
-def read_files():
-    folder_path = f"{PLANNING_APPS_FOLDER}/{DEFAULT_COUNCIL}"
-    files = os.listdir(folder_path)
-    for file in files:
-        file_path = os.path.join(folder_path, file)
-        if os.path.isfile(file_path):
-            with open(file_path, "r") as f:
-                yield f.read()
-
-
 def extract_data(html):
     messages = build_prompt_messages(html)
     response = openai.ChatCompletion.create(
